@@ -23,7 +23,6 @@ def get_sales_data():
     data_str = input("Enter your data here:")
 
     sales_data = data_str.split(",")
-    print(sales_data)
     validate_data(sales_data)
 
 
@@ -34,6 +33,7 @@ def validate_data(values):
     or if there aren't exaclty 6 values.
     """
     try:
+        [int(value) for value in values]
         if len(values) != 6:
             raise ValueError(
                 f"Exaclty 6 values required, you provided {len(values)}"
